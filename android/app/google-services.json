@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1047629595247",
+    "firebase_url": "https://raditya-clinic-service.firebaseio.com",
+    "project_id": "raditya-clinic-service",
+    "storage_bucket": "raditya-clinic-service.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047629595247:android:cc38b6aaf155c1548b039a",
+        "android_client_info": {
+          "package_name": "com.klinikraditya.raditya_clinic_service"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047629595247-1iec61orapt42p98m3uf147g41n47v2p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.klinikraditya.raditya_clinic_service",
+            "certificate_hash": "d39408ded3876630021e7fc5d0f0199d958d8efa"
+          }
+        },
+        {
+          "client_id": "1047629595247-89jntt8oiov090683hnkvnes3te7ud8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvTrXe2ttvhCx7Yz5s7H7P0M8DioLj-Bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047629595247-89jntt8oiov090683hnkvnes3te7ud8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
