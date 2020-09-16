@@ -1,3 +1,9 @@
 {
-  "config": "test"
+  "firebase_http": {
+    "api_key": "AIzaSyBlAAU49d6P4lRx6W0IxkLdo-9j512U2zw",
+    "firebase_auth_url": {
+      "token_url": "https://securetoken.googleapis.com/v1/token",
+      "auth_url": "https://identitytoolkit.googleapis.com/v1/accounts"
+    }
+  }
 }
