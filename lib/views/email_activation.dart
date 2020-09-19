@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  Home({this.uid});
-
-  final String uid;
-
+class ActivateEmail extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Material(
+    return Container(
       child: Center(
         child: Text(
-          'Home',
+          'Please activate your email account.'
         ),
       ),
     );

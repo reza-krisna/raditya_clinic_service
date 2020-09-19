@@ -1,60 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'utils/authenticator/authenticator.dart';
+import 'views/home.dart';
+import 'views/login.dart';
+import 'views/email_activation.dart';
+import 'views/user_onboard.dart';
 
-import 'home.dart';
-import 'login.dart';
-
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
+  final Authenticator auth = new Authenticator();
+  auth.getCurrentUser().then((currentUser) {
+    runApp(App(currentUser));
+  });
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
+  final currentUser;
+
+  App(this.currentUser);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: IntroScreen(),
+      theme: ThemeData(
+        fontFamily: 'Geomanist'
+      ),
+      home: routingUser(),
     );
   }
-}
 
-class IntroScreen extends StatefulWidget {
-
-  @override
-  _IntroScreenState createState() => _IntroScreenState();
-}
-
-class _IntroScreenState extends State<IntroScreen> {
-
-  @override
-  void initState(){
-    super.initState();
-    FirebaseAuth auth = FirebaseAuth.instance;
-    auth.authStateChanges().listen((User user) {
-      if(user == null){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+  routingUser() {
+    if (currentUser == null) {
+      return Login();
+    } else {
+      if(!currentUser.emailVerified) {
+        return ActivateEmail();
+      } else if(!currentUser.onBoarded){
+        return UserOnBoard();
       } else {
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home(uid: user.uid)));
+        return Home();
       }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new SplashScreen(
-      seconds: 5,
-      title: new Text('Welcome',
-        style: new TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20.0
-        ),),
-    );
+    }
   }
 }
+
+
+
+
 
 
