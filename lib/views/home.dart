@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class Home extends StatefulWidget {
 
   @override
-  _HomeState createState() => _HomeState();
+  HomeState createState() => HomeState();
 }
 
-class _HomeState extends State<Home>{
+class HomeState extends State<Home>{
 
   List<Map<String, String>> clinicService = [
     {"service_name": "Service 1"},
